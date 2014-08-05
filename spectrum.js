@@ -32,7 +32,9 @@
         appendTo: "body",
         maxSelectionSize: 7,
         cancelText: "cancel",
+        cancelClassName: "",
         chooseText: "choose",
+        chooseClassName: "",
         togglePaletteMoreText: "more",
         togglePaletteLessText: "less",
         clearText: "Clear Color Selection",
@@ -322,6 +324,7 @@
             textInput.keydown(function (e) { if (e.keyCode == 13) { setFromTextInput(); } });
 
             cancelButton.text(opts.cancelText);
+            cancelButton.addClass(opts.cancelClassName);
             cancelButton.bind("click.spectrum", function (e) {
                 e.stopPropagation();
                 e.preventDefault();
@@ -342,6 +345,7 @@
             });
 
             chooseButton.text(opts.chooseText);
+            chooseButton.addClass(opts.chooseClassName);
             chooseButton.bind("click.spectrum", function (e) {
                 e.stopPropagation();
                 e.preventDefault();
