@@ -461,7 +461,7 @@
                 return false;
             }
 
-            var paletteEvent = IE ? "mousedown.spectrum" : "click.spectrum touchstart.spectrum";
+            var paletteEvent = IE ? "mousedown.spectrum" : "mousedown.spectrum touchstart.spectrum";
             paletteContainer.delegate(".sp-thumb-el", paletteEvent, paletteElementClick);
             initialColorContainer.delegate(".sp-thumb-el:nth-child(1)", paletteEvent, { ignore: true }, paletteElementClick);
         }
