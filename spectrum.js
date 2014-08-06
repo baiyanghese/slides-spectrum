@@ -945,11 +945,13 @@
         var dpWidth = picker.outerWidth();
         var dpHeight = picker.outerHeight();
         var inputHeight = input.outerHeight();
+        var inputWidth = input.outerWidth();
         var doc = picker[0].ownerDocument;
         var docElem = doc.documentElement;
         var viewWidth = docElem.clientWidth + $(doc).scrollLeft();
         var viewHeight = docElem.clientHeight + $(doc).scrollTop();
         var offset = input.offset();
+        offset.left -= ( dpWidth / 2 ) - ( inputWidth / 2 );
         offset.top += inputHeight;
 
         offset.left -=
