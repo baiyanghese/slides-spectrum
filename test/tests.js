@@ -156,7 +156,7 @@ test( "Palette Events Fire In Correct Order ", function() {
     ok(count === 1, "change fires after move");
   });
 
-  el.spectrum("container").find(".sp-thumb-el:last-child").click();
+  el.spectrum("container").find(".sp-thumb-el:last-child").mousedown();
   el.spectrum("destroy");
 });
 
@@ -171,11 +171,11 @@ test( "Palette click events work ", function() {
     }
   });
 
-  el.spectrum("container").find(".sp-thumb-el:nth-child(3)").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(3)").mousedown();
   equal (el.spectrum("get").toName(), "blue", "First click worked");
-  el.spectrum("container").find(".sp-thumb-el:nth-child(2) .sp-thumb-inner").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(2) .sp-thumb-inner").mousedown();
   equal (el.spectrum("get").toName(), "green", "Second click worked (on child element)");
-  el.spectrum("container").find(".sp-thumb-el:nth-child(1) .sp-thumb-inner").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(1) .sp-thumb-inner").mousedown();
   equal (el.spectrum("get").toName(), "red", "Third click worked (on child element)");
   el.spectrum("destroy");
 
@@ -191,7 +191,7 @@ test( "hideAfterPaletteSelect: Palette stays open after color select", function(
   });
 
   el.spectrum("show");
-  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").mousedown();
 
   ok(!el.spectrum("container").hasClass('sp-hidden'), "palette is still visible after color selection");
   el.spectrum("destroy");
@@ -207,7 +207,7 @@ test( "hideAfterPaletteSelect: Palette closes after color select", function() {
   });
 
   el.spectrum("show");
-  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").click();
+  el.spectrum("container").find(".sp-thumb-el:nth-child(1)").mousedown();
 
   ok(el.spectrum("container").hasClass('sp-hidden'), "palette is still hidden after color selection");
   el.spectrum("destroy");
