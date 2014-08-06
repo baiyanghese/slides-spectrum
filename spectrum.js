@@ -930,7 +930,8 @@
             },
             get: get,
             destroy: destroy,
-            container: container
+            container: container,
+            saveCurrentSelection: function() { addColorToSelectionPalette(get()); }
         };
 
         spect.id = spectrums.push(spect) - 1;
