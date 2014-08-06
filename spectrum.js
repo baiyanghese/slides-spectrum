@@ -47,7 +47,9 @@
         theme: "sp-light",
         palette: [["#ffffff", "#000000", "#ff0000", "#ff8000", "#ffff00", "#008000", "#0000ff", "#4b0082", "#9400d3"]],
         selectionPalette: [],
-        disabled: false
+        disabled: false,
+        offsetX: 0,
+        offsetY: 0
     },
     spectrums = [],
     IE = !!/msie/i.exec( window.navigator.userAgent ),
@@ -867,7 +869,7 @@
 
             if (!flat) {
                 container.css("position", "absolute");
-                container.offset(getOffset(container, offsetElement));
+                container.offset(getOffset(container, offsetElement, opts));
             }
 
             updateHelperLocations();
@@ -940,7 +942,7 @@
     * checkOffset - get the offset below/above and left/right element depending on screen position
     * Thanks https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.datepicker.js
     */
-    function getOffset(picker, input) {
+    function getOffset(picker, input, opts) {
         var extraY = 0;
         var dpWidth = picker.outerWidth();
         var dpHeight = picker.outerHeight();
@@ -951,8 +953,8 @@
         var viewWidth = docElem.clientWidth + $(doc).scrollLeft();
         var viewHeight = docElem.clientHeight + $(doc).scrollTop();
         var offset = input.offset();
-        offset.left -= ( dpWidth / 2 ) - ( inputWidth / 2 );
-        offset.top += inputHeight;
+        offset.left -= ( dpWidth / 2 ) - ( inputWidth / 2 ) + opts.offsetX;
+        offset.top += inputHeight + opts.offsetY;
 
         offset.left -=
             Math.min(offset.left, (offset.left + dpWidth > viewWidth && viewWidth > dpWidth) ?
