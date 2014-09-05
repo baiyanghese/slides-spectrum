@@ -261,6 +261,7 @@
             container.toggleClass("sp-buttons-disabled", !opts.showButtons);
             container.toggleClass("sp-palette-buttons-disabled", !opts.togglePaletteOnly);
             container.toggleClass("sp-palette-disabled", !opts.showPalette);
+            container.toggleClass("sp-selection-palette-disabled", !opts.showSelectionPalette);
             container.toggleClass("sp-palette-only", opts.showPaletteOnly);
             container.toggleClass("sp-initial-disabled", !opts.showInitial);
             container.addClass(opts.className).addClass(opts.containerClassName);
