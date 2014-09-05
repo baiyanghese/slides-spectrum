@@ -83,12 +83,13 @@ License: MIT
     position:absolute;
     top:-4px;
     bottom: -4px;
-    width: 6px;
+    width: 8px;
+    margin-left: -3px;
     left: 50%;
     cursor: pointer;
-    border: 1px solid black;
-    background: white;
-    opacity: .8;
+    background: rgba( 255, 255, 255, 0.8 );
+    border: 1px solid rgba( 0, 0, 0, 0.8 );
+    border-radius: 4px;
 }
 .sp-alpha {
     display: none;
@@ -97,9 +98,6 @@ License: MIT
     right: 0;
     left: 0;
     height: 8px;
-}
-.sp-alpha-inner {
-    border: solid 1px #333;
 }
 
 .sp-clear {
@@ -141,6 +139,9 @@ License: MIT
     display: none;
 }
 .sp-palette-disabled .sp-palette-container {
+    display: none;
+}
+.sp-selection-palette-disabled .sp-palette-row-selection {
     display: none;
 }
 
@@ -224,11 +225,12 @@ License: MIT
     .sp-fill { padding-top: 60%; }
 }
 .sp-dragger {
-   border-radius: 5px;
-   height: 5px;
-   width: 5px;
-   border: 1px solid #fff;
-   background: #000;
+   border-radius: 14px;
+   height: 14px;
+   width: 14px;
+   margin: 4px 0 0 4px;
+   border: 1px solid rgba( 0, 0, 0, 0.8 );
+   background: rgba( 255, 255, 255, 0.3 );
    cursor: pointer;
    position:absolute;
    top:0;
@@ -238,12 +240,13 @@ License: MIT
     position: absolute;
     top:0;
     cursor:pointer;
-    height: 3px;
-    left: -1px;
-    right: -1px;
-    border: 1px solid #000;
-    background: white;
-    opacity: .8;
+    height: 6px;
+    left: -3px;
+    right: -3px;
+    margin-top: 2px;
+    background: rgba( 255, 255, 255, 0.8 );
+    border: 1px solid rgba( 0, 0, 0, 0.8 );
+    border-radius: 4px;
 }
 
 /*
@@ -268,8 +271,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 .sp-top {
     margin-bottom: 3px;
 }
-.sp-color, .sp-hue, .sp-clear {
-    border: solid 1px #666;
+.sp-clear {
+    border: solid 1px rgba( 0, 0, 0, 0.2 );
 }
 
 /* Input */
@@ -283,16 +286,16 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 }
 .sp-input {
    font-size: 12px !important;
-   border: 1px inset;
-   padding: 4px 5px;
+   padding: 5px;
    margin: 0;
    width: 100%;
-   background:transparent;
-   border-radius: 3px;
+   background: #fff;
+   border: 1px solid #ccc;
    color: #222;
 }
 .sp-input:focus  {
-    border: 1px solid orange;
+    border: 1px solid #1baee1;
+    outline: 0;
 }
 .sp-input.sp-validation-error {
     border: 1px solid red;
@@ -327,10 +330,10 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     height: 15px;
     margin: 3px;
     cursor: pointer;
-    border:solid 2px transparent;
+    border: solid 2px #ccc;
 }
 .sp-palette .sp-thumb-el:hover, .sp-palette .sp-thumb-el.sp-thumb-active {
-    border-color: orange;
+    border-color: #888;
 }
 .sp-thumb-el {
     position:relative;
@@ -339,7 +342,6 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 /* Initial */
 .sp-initial {
     float: left;
-    border: solid 1px #333;
 }
 .sp-initial span {
     width: 30px;
