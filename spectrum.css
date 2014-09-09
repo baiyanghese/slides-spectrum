@@ -456,6 +456,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 .sp-container .sp-palette-toggle {
     background: transparent;
     font-size: 12px;
+    margin-top: 10px;
 }
 
 
