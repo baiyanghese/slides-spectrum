@@ -457,7 +457,15 @@
                     move();
                     updateOriginalInput(true);
                     if (opts.hideAfterPaletteSelect) {
-                      hide();
+                        // Hakim: Dispatch the hide callback even if we're flat,
+                        // allows us to hook our custom showing/hiding into the
+                        // "after palette select" behavior.
+                        if (flat) {
+                            callbacks.hide(get());
+                        }
+                        else {
+                            hide();
+                        }
                     }
                 }
 
